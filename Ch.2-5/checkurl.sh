@@ -10,12 +10,12 @@ CheckUrl (){
     wget --timeout=$timeout --tries=1 "$1" -q -O /dev/null
     if [ $? -ne 0 ]
     then
-        let fails=fails+1 #之间不要有空格 否则会let: =: 语法错误: 需要操作数 (错误符号是 "=")
+        let fails=fails+1 #notice the space here
     else
         let success=success+1
     fi
     echo $success
-    if [ ${success} -ge 1 ] #注意空格
+    if [ ${success} -ge 1 ]
     then
         echo success
         # exit 1
