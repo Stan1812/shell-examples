@@ -7,6 +7,7 @@ CheckUrl (){
     success=0
     # while true
     #   do
+    
     wget --timeout=$timeout --tries=1 "$1" -q -O /dev/null
     if [ $? -ne 0 ]
     then
@@ -20,11 +21,15 @@ CheckUrl (){
         echo success
         # exit 1
     fi
-    if [ ${fails} -ge 2 ]
+    if [ ${fails} -ge 1 ]
     then
         echo "system is down"
         # exit 2
     fi
     # done
 }
+if [ $# -ne 1 ]; then
+    echo $" usage:$0 url"
+    exit 0
+fi
 CheckUrl $1
