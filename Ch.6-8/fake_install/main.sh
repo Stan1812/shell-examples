@@ -40,6 +40,6 @@ case "$num" in
     ;;
 esac
 
-[[ ! "$a" =~ [1-3] ]] &&{
+[[ ! "$num" =~ [1-3] ]] &&{
     echo "Input Error"
 }
